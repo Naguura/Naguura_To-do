@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<h1>Tareas por Hacer</h1>
+
+<table class="table table-hover ">
+
+  <tbody>
+    <% @lists.each do |list| %>
+      <% if list.status %>
+        <tr class="table-secondary">
+          <td class="striker"><%= link_to list.task, edit_list_path(list)%></td>
+          <td>
+            <center>
+              <%= form_for(list) do |f| %>
+              <%= f.text_field :task, type: 'hidden'%>
+              <%= f.check_box :status, :checked => false, :style => 'visibility: hidden'%>
+              <%= f.submit "Crossed", class:"btn- btn-outline-secondary btn-sm"%>
+              <% end%>
+            </center>
+          </td>
+          <td>
+            <%= link_to 'Delete', list,class: 'btn btn-outline-danger btn-sm', method: :delete, data: {confirm: "Are u sure?"} %> 
+          </td>
+        </tr>
+      <% else%>
+        <tr >
+          <td ><%= link_to list.task, edit_list_path(list)%></td>
+          <td>
+            <center>
+              <%= form_for(list) do |f| %>
+              <%= f.text_field :task, type: 'hidden'%>
+              <%= f.check_box :status, :checked => true, :style => 'visibility: hidden'%>
+              <%= f.submit "UnCrossed", class:"btn- btn-outline-secondary btn-sm"%>
+              <% end%>
+            </center>
+          </td>
+          <td><%= link_to 'Delete', list,class: 'btn btn-outline-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end%>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New List', new_list_path %>
