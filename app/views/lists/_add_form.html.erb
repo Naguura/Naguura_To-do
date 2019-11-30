@@ -10,18 +10,8 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :task %>
-    <%= f.text_field :task %>
-  </div>
-
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.check_box :status %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-inline my-2 my-lg-0">
+    <%= f.text_field :task, class: 'form-control mr.sm-2' %>
+    <%= f.submit 'Add a todo task', class: 'btn btn-outline-primary'%>
   </div>
 <% end %>

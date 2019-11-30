@@ -2,4 +2,55 @@
 
 .striker{
 	text-decoration: line-through;
+	font-size: 120%;
+	padding: 0px;
+	margin: 5px;
+}
+.striker a:hover{
+	text-decoration: none;
+	background: #eedfe3;
+	color:black;
+}
+
+.striker-1 a:hover{
+	text-decoration: none;
+	background: #eedfe3;
+	color:black;
+}
+.striker-1{
+	font-size: 130%;
+}
+
+.navbar, .navbar-expand-lg, .navbar-dark, .bg-dark{
+	background: rgb(63,94,251);
+	background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(238,162,178,1) 100%);
+}
+
+
+.header{
+	margin:auto;
+	padding: 10px;
+	width: 90%;
+	text-align: center;
+}
+
+
+.btn, .btn-ourline-primary{
+	color:black;
+	padding-right: 5px;
+	padding-left: 5px;
+	margin: 0px;
+	margin-right: 2px;
+	margin-left: 8px;
+}
+
+.link-container{
+	font-size: 120%;
+	text-align: center;
+}
+
+.link-container a:hover{
+	text-decoration: none;
+	background: #eedfe3;
+	color:black;
 }
