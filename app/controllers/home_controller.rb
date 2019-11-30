@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 	def delete_crossed
-		@delete_crossed = List.where(:completed =>).destroy_all
+		@delete_crossed = List.where(:status => true).destroy_all
 		redirect_to root_url, notice: 'All crossed tasks were successfully destroyed'
 	end
 

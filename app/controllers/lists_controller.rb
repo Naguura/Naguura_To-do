@@ -3,7 +3,7 @@ class ListsController < ApplicationController
 
  
   def index
-    @lists = List.all.order("created_at DESC")
+    @lists = List.all.order('status ASC, created_at DESC')
     @list = List.new
   end
 

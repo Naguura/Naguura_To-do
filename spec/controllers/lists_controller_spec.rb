@@ -5,9 +5,9 @@ require 'rails_helper'
 	  		it 'render the  index template' do
 	  			list = create(:list)
 	  			get :index
-			    expect(response).to have_http_status(:ok)
-			    expect(response).to render_template :index
-			    expect(assigns(:lists)).to eq([list])
+				expect(response).to have_http_status(:ok)
+				expect(response).to render_template :index
+				expect(assigns(:lists)).to eq([list])
 	  		end
 	  	end
 
@@ -31,7 +31,7 @@ require 'rails_helper'
 	  		end
 	  	end
 
-		describe 'GET #new' do
+		describe 'GET new template' do
 			it 'render new template' do 
 		    	get :new
 		    	expect(response).to have_http_status(:ok)
@@ -40,12 +40,40 @@ require 'rails_helper'
 		    end
 		end
 
+		describe 'POST Create' do
+			let(:valid_attributes) {attributes_for(:list)}
+			context 'with valid_attributes' do
+				it'create a new list' do
+					expect {
+						post :create, params: { list: valid_attributes}
+					}.to change(List, :count).by(1)
+
+				expect(List.last.task).to eq('holiwi')
+				expect(List.last.status).to be true
+				end
+
+				it 'assigns a newly list to @list' do
+					post :create, params: {list: valid_attributes}
+					expect(assigns(:list)).to be_a(List)
+					expect(assigns(:list)).to be_persisted
+				end
+
+				it 'redirects to a index lists' do
+					post :create, params: {list: valid_attributes}
+					expect(response).to have_http_status(:redirect)
+					expect(response).to redirect_to root_url
+				end
+			end
+		end
+
 		describe ' Delete' do 
 	    	before :each do 
 	      		@list = create(:list)
 	    	end
 	    	it 'list destroyed' do 
-	      		expect {delete :destroy, params: {id: @list}}.to change(List, :count).by (-1)
+	      		expect {
+	      			delete :destroy, params: {id: @list}
+	      		}.to change(List, :count).by (-1)
 	      		expect(response).to redirect_to (lists_url)
 	    	end
 	  	end
