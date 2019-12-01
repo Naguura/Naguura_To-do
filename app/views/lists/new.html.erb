@@ -5,35 +5,34 @@
 		</header>
 
 		<div class="center">
-  <%= form_for(@list) do |f| %>
-    <% if @list.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
-        <ul>
-          <% @list.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+			  <%= form_for(@list) do |f| %>
+			    <% if @list.errors.any? %>
+			      <div id="error_explanation">
+			        <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+			        <ul>
+			          <% @list.errors.full_messages.each do |message| %>
+			            <li><%= message %></li>
+			          <% end %>
+			        </ul>
+			      </div>
+			    <% end %
+			  <div class="field">
+				    <%= f.label 'Task'%>
+				    <%= f.text_field :task , class: 'form-control' %>
+			  </div>
 
+			  <div class="field">
+			    	<%= f.check_box :status , class: "form-check-label"%>
+			  </div>
 
-  <div class="field">
-    <%= f.label 'Task'%>
-    <%= f.text_field :task , class: 'form-control' %>
-  </div>
-
-  <div class="field">
-    <%= f.check_box :status , class: "form-check-label"%>
-  </div>
-  <div class="center">
-    <%= f.submit 'Create Task',  class:"btn btn-primary mb-2"%>
-  </div>
-  <% end %>
-</div>
+			  <div class="center">
+			    	<%= f.submit 'Create Task',  class:"btn btn-primary mb-2"%>
+			  </div>
+			  <% end %>
+		</div>
 
 		<div class="center">
-					<%= link_to 'Back to Tasks', lists_path, class: 'back' %>
+			<%= link_to 'Back to Tasks', lists_path, class: 'back' %>
 		</div>
-		</div>
+	</div>
 </div>

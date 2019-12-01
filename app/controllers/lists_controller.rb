@@ -1,8 +1,6 @@
 class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
-  
-
   def index
     @lists = List.all.order('status ASC, created_at DESC')
     @list = List.new
@@ -49,10 +47,9 @@ class ListsController < ApplicationController
     end
   end
 
-puts ' Atodoooooo'
+
   def destroy
     @list.destroy
-    print ' todoooooo'
     respond_to do |format|
       format.html { redirect_to lists_url, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
