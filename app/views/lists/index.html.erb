@@ -45,12 +45,13 @@
     </tbody>
   </table>
 </div>
-<br>
+
 
 <div class="center">
-  <%= link_to 'Destroy all Tasks', home_delete_all_path , data: { confirm: 'Are you sure?'}%>
-  <%= link_to 'Destroy all completed Tasks', home_delete_crossed_path,  data: { confirm: 'Are you sure?'} %>
+  <%= link_to 'Destroy all Tasks', home_delete_all_path ,class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?'}%> 
+  <%= link_to 'Destroy all completed Tasks', home_delete_crossed_path,class: 'btn btn-outline-danger',  data: { confirm: 'Are you sure?'} %>
 </div>
+
 <footer id="footer">
   <div class="center">
     <p>
