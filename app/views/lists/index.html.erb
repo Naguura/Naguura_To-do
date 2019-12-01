@@ -19,7 +19,8 @@
               </center>
             </td>
             <td>
-              <%= link_to 'Delete', list,class: 'btn btn-outline-warning', method: :delete, data: {confirm: "Are u sure?"} %> 
+                <%= link_to 'Delete', list,class: 'btn btn-outline-warning',
+                                      method: :delete,data: {confirm: 'Are u sure?'} %> 
             </td>
           </tr>
         <% else%>
@@ -30,11 +31,14 @@
                 <%= form_for(list) do |f| %>
                 <%= f.text_field :task, type: 'hidden'%>
                 <%= f.check_box :status, :checked => true, :style => 'visibility: hidden'%>
-                <%= f.submit "Complete Task", class:"btn btn-outline-secondary "%>
+                <%= f.submit "Complete Task", class:'btn btn-outline-secondary' %>
                 <% end%>
               </center>
             </td>
-            <td><%= link_to 'Destroy', list,class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>
+                <%= link_to 'Destroy', list,class: 'btn btn-outline-danger', 
+                                        method: :delete,data: { confirm: 'Are you sure?'} %>
+              </td>
           </tr>
         <% end%>
       <% end %>

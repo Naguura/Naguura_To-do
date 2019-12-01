@@ -47,9 +47,10 @@ class ListsController < ApplicationController
     end
   end
 
-
+puts ' Atodoooooo'
   def destroy
     @list.destroy
+    print ' todoooooo'
     respond_to do |format|
       format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }
       format.json { head :no_content }
