@@ -1,27 +1,31 @@
-<%= form_for(@list) do |f| %>
-  <% if @list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+<div class="center">
+  <%= form_for(@list) do |f| %>
+    <% if @list.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+        <ul>
+          <% @list.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-        <% @list.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+
+  <div class="field">
+    <%= f.label 'Task'%>
+    <%= f.text_field :task , class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :status , class: "form-check-label"%>
+  </div>
+
+
+
+
+  <div class="center">
+    <%= f.submit 'Update Task',  class:"btn btn-primary mb-2"%>
+  </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :task %>
-    <%= f.text_field :task %>
-  </div>
-
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.check_box :status %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,15 +1,23 @@
-
-
-<p>
-  <strong>Task:</strong>
-  <%= @list.task %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @list.status %>
-</p>
-
-
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<div class="center">
+	<div class="section-show">
+		<div class="container">
+			<div class="p-3 mb-2 bg-white text-dark"> 
+				<strong>Task:</strong> <br/> 
+				<%= @list.task %> 
+			</div>
+			
+			<div class="p-3 mb-2 bg-white text-dark"> 
+				<strong>Task Status:</strong> <br/>
+				<% if @list.status %>
+					Completed 
+				<%else%>
+					Uncompleted
+				<%end%>
+			</div>
+		</div>
+	</div>
+	<div class="center">
+			<%= link_to 'Edit Task', edit_list_path(@list), class: 'show' %> |
+			<%= link_to 'Back to Tasks', lists_path, class: 'back' %>
+	</div>	
+</div>

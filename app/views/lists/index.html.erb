@@ -36,7 +36,7 @@
               </center>
             </td>
             <td>
-                <%= link_to 'Destroy', list,class: 'btn btn-outline-danger', 
+                <%= link_to 'Delete', list,class: 'btn btn-outline-danger', 
                                         method: :delete,data: { confirm: 'Are you sure?'} %>
             </td>
           </tr>
@@ -46,12 +46,12 @@
   </table>
 </div>
 
-
-<div class="center">
-  <%= link_to 'Destroy all Tasks', home_delete_all_path ,class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?'}%> 
-  <%= link_to 'Destroy all completed Tasks', home_delete_crossed_path,class: 'btn btn-outline-danger',  data: { confirm: 'Are you sure?'} %>
+<div class="container">
+  <div class="center">
+    <%= link_to 'Destroy all Tasks', home_delete_all_path ,class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?'}%> 
+    <%= link_to 'Destroy all completed Tasks', home_delete_crossed_path,class: 'btn btn-outline-danger',  data: { confirm: 'Are you sure?'} %>
+  </div>
 </div>
-
 <footer id="footer">
   <div class="center">
     <p>

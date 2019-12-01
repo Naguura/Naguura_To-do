@@ -1,6 +1,15 @@
-<h1>Editing List</h1>
+<header id="header-edit" class="header-edit">
+	<h2 class="title-edit">Edit Your Task </h2>
+</header>
 
-<%= render 'form', list: @list %>
-
-<%= link_to 'Show', @list %> |
-<%= link_to 'Back', lists_path %>
+<div class="section-edit">
+	<div class="container">
+		<div class="center">
+			<%= render 'form', list: @list %>
+		</div>
+	</div>
+</div>
+<div class="center">
+	<%= link_to 'Show Task', @list, class: 'show' %> |
+	<%= link_to 'Back to Tasks', lists_path, class: 'back' %>
+</div>
