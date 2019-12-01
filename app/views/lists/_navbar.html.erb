@@ -1,14 +1,15 @@
-<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <%= link_to 'Nagûûra To-Do List', root_path, class: 'navbar-brand' %>
+<section class="navbar-section">
+	<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <%= link_to 'Nagûûra To-Do List', root_path, class: 'navbar-brand' %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
- 
-    </ul>
-    <%= render 'add_form' %>
-  </div>
-</nav>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	    </ul>
+	    <%= render 'add_form' %>
+	  </div>
+	</nav>
+</section>

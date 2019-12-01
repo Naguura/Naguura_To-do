@@ -76,3 +76,14 @@
 .navbar{
 	margin:0px;
 }
+
+.navbar-section{
+	height: 90%;
+	width: 100%;
+}
+
+input::placeholder {
+  color: grey;
+  font-size: 1em;
+  font-style: italic;
+}

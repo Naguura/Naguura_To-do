@@ -30,7 +30,7 @@
                 <%= form_for(list) do |f| %>
                 <%= f.text_field :task, type: 'hidden'%>
                 <%= f.check_box :status, :checked => true, :style => 'visibility: hidden'%>
-                <%= f.submit "UnCompleted Task", class:"btn btn-outline-secondary "%>
+                <%= f.submit "Complete Task", class:"btn btn-outline-secondary "%>
                 <% end%>
               </center>
             </td>
@@ -44,7 +44,7 @@
 <br>
 
 <div class="link-container">
-  <%= link_to 'New List', new_list_path %> |
+  <%= link_to 'New Task', new_list_path %> |
   <%= link_to 'Destroy all completed Tasks', home_delete_crossed_path , method: :delete, data: {confirm: "Are u sure?"}%> |
   <%= link_to 'Destroy all Tasks', home_delete_all_path, method: :delete, data: {confirm: "Are u sure?"} %>
 </div>

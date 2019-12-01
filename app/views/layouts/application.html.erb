@@ -10,8 +10,10 @@
   </head>
 
   <body>
-    <%= render 'lists/navbar'%>
-    <div class="container">
+    <section class="navbar-section">
+      <%= render 'lists/navbar'%>
+    </section>
+    <div class="body-container">
       <%= render 'lists/flash' %>     
     <%= yield %>
     </div>
