@@ -1,7 +1,8 @@
 class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
- 
+  
+
   def index
     @lists = List.all.order('status ASC, created_at DESC')
     @list = List.new
@@ -56,6 +57,7 @@ puts ' Atodoooooo'
       format.json { head :no_content }
     end
   end
+
 
   private
     def set_list

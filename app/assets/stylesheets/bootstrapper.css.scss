@@ -22,8 +22,8 @@
 }
 
 .navbar, .navbar-expand-lg, .navbar-dark, .bg-dark{
-	background: rgb(63,94,251);
-	background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(238,162,178,1) 100%);
+background: rgb(188,192,193);
+background: radial-gradient(circle, rgba(188,192,193,1) 0%, rgba(42,41,41,1) 100%);
 }
 
 
@@ -44,6 +44,27 @@
 	margin-right: 2px;
 	margin-left: 8px;
 }
+
+.btn-outline-info{
+	color: white;
+	padding-right: 5px;
+	padding-left: 5px;
+	margin: 0px;
+	margin-right: 8px;
+	margin-left: 3px;
+
+}
+.btn-outline-warning{
+	color: black;
+	border: solid 1.5px;
+	border-color: yellow;
+}
+ .btn-outline-danger{
+	color: black;
+	border: solid 1.5px;
+	border-color: red;
+}
+
 
 .table-container, .btn-outline-secondary{
 	color: black;
@@ -91,4 +112,9 @@ input::placeholder {
 .div-form{
 	height: 90%;
 
+}
+
+.navbar-brand {
+	text-decoration: none;
+	background: none;
 }

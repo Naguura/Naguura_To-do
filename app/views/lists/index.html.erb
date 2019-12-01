@@ -1,8 +1,8 @@
 <header id="header" class="header">
-  <h2 class="title">Tareas por Hacer</h2>
+  <h2 class="title">Tasks</h2>
 </header>
 
-<div class="table-container">
+<div class="container">
   <table id="principal-table" class="table table-hover ">
     <tbody>
       <% @lists.each do |list| %>
@@ -38,7 +38,7 @@
             <td>
                 <%= link_to 'Destroy', list,class: 'btn btn-outline-danger', 
                                         method: :delete,data: { confirm: 'Are you sure?'} %>
-              </td>
+            </td>
           </tr>
         <% end%>
       <% end %>
@@ -47,11 +47,6 @@
 </div>
 <br>
 
-<div class="link-container">
-  <%= link_to 'New Task', new_list_path %> |
-  <%= link_to 'Destroy all completed Tasks', home_delete_crossed_path , method: :delete, data: {confirm: "Are u sure?"}%> |
-  <%= link_to 'Destroy all Tasks', home_delete_all_path, method: :delete, data: {confirm: "Are u sure?"} %>
-</div>
 
 <footer id="footer">
   <div class="center">
